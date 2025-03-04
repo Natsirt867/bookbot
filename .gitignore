@@ -1,3 +1,4 @@
 # Ignoring /books dir
 /books
 *.swp
+__pycache__/

@@ -1,39 +1,30 @@
 # Functon to count the words in the document
 def word_count(input_text: str) -> str:
-    count: int = 0
-    words_sep: list[str] = input_text.split()
-    for i in words_sep:
-        count = count + 1
-    return f"{count}"
+    return len(input_text.split())
 
 # Function to count the characters in the document
-def char_count(input_text: str) -> int:
+def char_count(input_text: str) -> dict[str: int]:
     lower_chars: str = input_text.lower()
 
-    count: int = 0
-    chars_sep: list[str: int] = {}
+    chars_sep: dict[str: int] = {}
 
-    while (count < (len(lower_chars))):
-        for i in (lower_chars):    
-            if i not in chars_sep:
-                chars_sep[i] = 0
-            for j in chars_sep:
-                if i == j:
-                    chars_sep[j] += 1
-            count += 1
+    for char in (lower_chars):    
+        if char not in chars_sep:
+            chars_sep[char] = 0
+        chars_sep[char] += 1
 
     return chars_sep
 
 # Function to return key "num" from dict 
-def sort_on(dict: list[str: str, str: int]) -> str:
-    return dict["num"]
+def sort_on(item: list[dict[str: str, str: int]]) -> int:
+    return item["num"]
 
 # Function to print sorted dict
 def sorted_dict(argv: dict[str: int]) -> None:
 
     new_list: list[str: str, str: int] = []
 
-    # iterate through dict argv, for each letter in argv check if alpha character
+    # Iterate through dict argv, for each letter in argv check if alpha character
     # if it is alpha, append to new list in key: value, key: value format (double dict?)
     for letter in argv:
         if letter.isalpha(): 
